@@ -1,7 +1,7 @@
 import React from "react"
 import Block from "../components/Block"
 import SomeHeader from "../components/SomeHeader"
-import * as styles from "./index.styles"
+import * as styles from "./styles"
 
 export default function Home() {
   return (
