@@ -1,10 +1,19 @@
 import React from "react"
-import Block from "../components/Block/Block"
+import Block from "../components/Block"
+import SomeHeader from "../components/SomeHeader"
+import * as styles from "./index.styles"
 
 export default function Home() {
   return (
-    <div>
+    <div css={styles.wrapper}>
       <h1>Hello world!</h1>
+      <SomeHeader />
+      <Block />
+      <Block />
+      <Block />
+      <Block />
+      <Block />
+      <Block />
       <Block />
       <Block />
       <Block />

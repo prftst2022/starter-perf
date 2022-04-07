@@ -10,6 +10,18 @@ const theme = {
     headingBlack: "black",
     accent: "#d1dce5",
     bgColor: "#e0e0e0",
+    avatar: "#88BF91",
+  },
+  spacing: {
+    s: "8px",
+    m: "16px",
+    l: "24px",
+    xl: "32px",
+  },
+  borderRadius: {
+    xs: "4px",
+    s: "8px",
+    m: "12px",
   },
 }
 
