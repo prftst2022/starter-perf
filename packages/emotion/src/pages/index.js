@@ -1,11 +1,16 @@
 import React from "react"
 import Block from "../components/Block"
 import SomeHeader from "../components/SomeHeader"
-import * as styles from "./styles"
+import { css } from "@emotion/react"
+
+const wrapper = css`
+  margin: 0 auto;
+  max-width: 1200px;
+`
 
 export default function Home() {
   return (
-    <div css={styles.wrapper}>
+    <div css={wrapper}>
       <h1>Hello world!</h1>
       <SomeHeader />
       <Block />
