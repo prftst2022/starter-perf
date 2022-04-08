@@ -17,7 +17,7 @@ for (let index = 0; index < arr.length; index++) {
 export default function Home() {
   return (
     <div css={wrapper}>
-      <h1>Hello world!</h1>
+      <h1>Hello world! emotion</h1>
       <SomeHeader />
       {arr.map((_, index) => (
         <Block key={index} number={index} />

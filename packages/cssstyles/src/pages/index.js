@@ -12,7 +12,7 @@ for (let index = 0; index < arr.length; index++) {
 export default function Home() {
   return (
     <div style={{ margin: "0 auto", maxWidth: "1200px" }}>
-      <h1>Hello world!</h1>
+      <h1>Hello world! SCSS</h1>
       <SomeHeader />
       {arr.map((_, index) => (
         <Block key={index} number={index} />
