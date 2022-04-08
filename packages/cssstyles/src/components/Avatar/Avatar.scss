@@ -7,3 +7,17 @@
   align-items: center;
   justify-content: center;
 }
+
+.unused-class {
+  background-color: var(--colors-avatar);
+  border-radius: 100%;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: var(--spacing-l);
+  border: 1px solid var(--colors-heading);
+  padding: var(--spacing-s);
+  margin-bottom: var(--spacing-m);
+}

@@ -33,3 +33,17 @@ export const listItem = theme => css`
   padding: ${theme.spacing.s};
   margin-bottom: ${theme.spacing.m};
 `
+
+export const unusedClass2 = theme => css`
+  background-color: ${theme.colors.avatar};
+  border-radius: 100%;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: ${theme.spacing.l};
+  border: 1px solid ${theme.colors.heading};
+  padding: ${theme.spacing.s};
+  margin-bottom: ${theme.spacing.m};
+`
