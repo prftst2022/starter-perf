@@ -15,7 +15,7 @@ export default function Image() {
     <div style={{ margin: "0 auto", maxWidth: "1200px" }}>
       <h1>Hello world! SCSS</h1>
       <StaticImage
-        style={{ width: "450px", height: "150px" }}
+        className="image"
         src="https://placekitten.com/900/300"
         alt="A kitten"
       />

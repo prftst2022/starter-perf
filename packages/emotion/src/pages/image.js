@@ -9,6 +9,11 @@ const wrapper = css`
   max-width: 1200px;
 `
 
+const image = css`
+  width: 450px;
+  height: 150px;
+`
+
 const arr = new Array(20)
 
 for (let index = 0; index < arr.length; index++) {
@@ -20,7 +25,7 @@ export default function Image() {
     <div css={wrapper}>
       <h1>Hello world! emotion</h1>
       <StaticImage
-        style={{ width: "450px", height: "150px" }}
+        css={image}
         src="https://placekitten.com/900/300"
         alt="A kitten"
       />
