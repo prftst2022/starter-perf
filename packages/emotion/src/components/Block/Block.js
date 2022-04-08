@@ -21,6 +21,14 @@ const Block = ({ number }) => {
         <TrackCard />
         <TrackCard />
       </div>
+
+      <div css={styles.blockBody}>
+        <ul css={styles.list}>
+          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(el => (
+            <li css={styles.listItem} key={el}>{el}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }

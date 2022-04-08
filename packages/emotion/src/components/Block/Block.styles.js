@@ -22,3 +22,14 @@ export const blockBody = css`
   display: flex;
   width: 100%;
 `
+export const list = theme => css`
+  font-size: 20px;
+  color: ${theme.colors.heading};
+  display: flex;
+`
+export const listItem = theme => css`
+  margin-left: ${theme.spacing.l};
+  border: 1px solid ${theme.colors.heading};
+  padding: ${theme.spacing.s};
+  margin-bottom: ${theme.spacing.m};
+`
