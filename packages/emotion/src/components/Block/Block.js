@@ -13,7 +13,7 @@ const Block = ({ number }) => {
       <div css={styles.blockHeader}>
         <Avatar number={number} />
         <Space />
-        <Button />
+        <Button number={number} />
         <Space />
         <Text number={number} />
       </div>
