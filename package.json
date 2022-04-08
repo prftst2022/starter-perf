@@ -8,6 +8,7 @@
   "version": "0.0.0",
   "scripts": {
     "emotion": "yarn workspace emotion develop",
+    "cssstyles": "yarn workspace cssstyles develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
   },
   "dependencies": {
