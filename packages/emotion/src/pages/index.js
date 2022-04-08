@@ -8,7 +8,7 @@ const wrapper = css`
   max-width: 1200px;
 `
 
-const arr = new Array(100)
+const arr = new Array(20)
 
 for (let index = 0; index < arr.length; index++) {
   arr[index] = index
