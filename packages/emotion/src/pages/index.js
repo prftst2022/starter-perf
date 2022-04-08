@@ -8,21 +8,20 @@ const wrapper = css`
   max-width: 1200px;
 `
 
+const arr = new Array(100)
+
+for (let index = 0; index < arr.length; index++) {
+  arr[index] = index
+}
+
 export default function Home() {
   return (
     <div css={wrapper}>
       <h1>Hello world!</h1>
       <SomeHeader />
-      <Block />
-      <Block />
-      <Block />
-      <Block />
-      <Block />
-      <Block />
-      <Block />
-      <Block />
-      <Block />
-      <Block />
+      {arr.map((_, index) => (
+        <Block key={index} number={index} />
+      ))}
     </div>
   )
 }

@@ -18,3 +18,7 @@ export const blockHeader = css`
   align-items: center;
   justify-content: flex-start;
 `
+export const blockBody = css`
+  display: flex;
+  width: 100%;
+`

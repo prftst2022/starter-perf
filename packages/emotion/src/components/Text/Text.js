@@ -1,8 +1,12 @@
 import React from "react"
 import * as styles from "./Text.styles"
 
-const Text = () => {
-  return <p css={styles.text}>Lorem ipsum</p>
+const Text = ({ number }) => {
+  return (
+    <p css={styles.text}>
+      Lorem ipsum {number + Math.floor(Math.random() * 100)}
+    </p>
+  )
 }
 
 export default Text
