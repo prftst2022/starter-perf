@@ -6,18 +6,5 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [
-    `gatsby-plugin-netlify`,
-    `gatsby-plugin-emotion`,
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages/`,
-      },
-    },
-  ],
+  plugins: [`gatsby-plugin-netlify`, `gatsby-plugin-emotion`],
 }
