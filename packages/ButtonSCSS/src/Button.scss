@@ -1,6 +1,6 @@
 .button {
-  background-color: var(--colors-primary);
-  padding: var(--spacing-s);
+  background-color: var(--scss-colors-primary);
+  padding: var(--scss-spacing-s);
   font-size: 16px;
   border-radius: 8px;
   border-style: none;
@@ -18,6 +18,6 @@
   vertical-align: baseline;
   &:hover,
   &:focus {
-    background-color: var(--colors-textlight);
+    background-color: var(--scss-colors-textlight);
   }
 }

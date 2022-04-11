@@ -1,4 +1,5 @@
 import React from "react"
+import "@starter-perf/tokens-scss"
 import "./Avatar.scss"
 
 const Avatar = ({ number }) => {

@@ -2,13 +2,14 @@
   "name": "starter-perf",
   "private": true,
   "workspaces": [
+    "components/scss-components/Avatar",
     "packages/*"
   ],
   "description": "starter for test performance",
   "version": "0.0.0",
   "scripts": {
-    "emotion": "yarn workspace emotion develop",
-    "cssstyles": "yarn workspace cssstyles develop",
+    "emotion": "yarn workspace @starter-perf/emotion develop",
+    "cssstyles": "yarn workspace @starter-perf/cssstyles develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
   },
   "dependencies": {

@@ -1,9 +1,9 @@
 import React from "react"
-import Avatar from "../Avatar"
-import Space from "../Space"
-import Button from "../Button"
-import Text from "../Text"
-import TrackCard from "../TrackCard"
+import Avatar from "@starter-perf/avatar-scss"
+import Space from "@starter-perf/space-scss"
+import Button from "@starter-perf/button-scss"
+import Text from "@starter-perf/text-scss"
+import TrackCard from "@starter-perf/track-card-scss"
 import "./Block.scss"
 
 const Block = ({ number }) => {

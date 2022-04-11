@@ -1,5 +1,5 @@
 .avatar {
-  background-color: var(--colors-avatar);
+  background-color: var(--scss-colors-avatar);
   border-radius: 100%;
   width: 64px;
   height: 64px;
@@ -9,15 +9,15 @@
 }
 
 .unused-class {
-  background-color: var(--colors-avatar);
+  background-color: var(--scss-colors-avatar);
   border-radius: 100%;
   width: 64px;
   height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: var(--spacing-l);
-  border: 1px solid var(--colors-heading);
-  padding: var(--spacing-s);
-  margin-bottom: var(--spacing-m);
+  margin-left: var(--scss-spacing-l);
+  border: 1px solid var(--scss-colors-heading);
+  padding: var(--scss-spacing-s);
+  margin-bottom: var(--scss-spacing-m);
 }
