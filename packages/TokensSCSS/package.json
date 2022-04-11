@@ -4,6 +4,7 @@
   "license": "MIT",
   "main": "index.scss",
  "scripts": {
+    "build": "rollup --config node:@starter-perf/rollup-config",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
