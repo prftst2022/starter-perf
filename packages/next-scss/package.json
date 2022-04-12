@@ -1,0 +1,24 @@
+{
+  "name": "@starter-perf/next-scss",
+  "version": "0.5.0",
+  "private": true,
+  "scripts": {
+    "develop": "next dev",
+    "build": "next build",
+    "export": "next export"
+  },
+  "dependencies": {
+    "next": "^12.0.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@netlify/plugin-nextjs": "^4.2.5",
+    "sass": "^1.50.0",
+    "@starter-perf/avatar-scss": "0.1.0",
+    "@starter-perf/button-scss": "0.1.0",
+    "@starter-perf/space-scss": "0.1.0",
+    "@starter-perf/text-scss": "0.1.0",
+    "@starter-perf/track-card-scss": "0.1.0"
+  }
+}

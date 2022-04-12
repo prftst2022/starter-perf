@@ -2,9 +2,8 @@
   "name": "@starter-perf/tokens-scss",
   "version": "0.1.0",
   "license": "MIT",
-  "main": "index.scss",
+  "main": "index.module.css",
  "scripts": {
-    "build": "rollup --config node:@starter-perf/rollup-config",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },

@@ -11,12 +11,15 @@
   "scripts": {
     "gatsby-emotion": "yarn workspace @starter-perf/gatsby-emotion develop",
     "gatsby-scss": "yarn workspace @starter-perf/gatsby-scss develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
+    "next-scss": "yarn workspace @starter-perf/next-scss develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "clean:all": "workspaces-foreach rimraf node_modules .next .cache && rimraf node_modules"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "prettier": "^2.6.2"
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "yarn-workspaces-foreach": "^0.2.0"
   },
   "repository": {
     "type": "git"

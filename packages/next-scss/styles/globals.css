@@ -1,0 +1,58 @@
+:root {
+  --block-colors-primary: #005b99;
+  --colors-text: #2e353f;
+  --colors-textlight: #4f5969;
+  --colors-heading: #1a202c;
+  --colors-headingblack: black;
+  --colors-accent: #d1dce5;
+  --block-colors-bgcolor: #e0e0e0;
+  --colors-avatar: #88bf91;
+  --scss-colors-avatar: #06c222;
+  --scss-colors-primary: #1a202c;
+
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+
+  --border-radius-xs: 4px;
+  --border-radius-s: 8px;
+  --border-radius-m: 12px;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  padding: 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+code {
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-family: Menlo, Monaco, Lucida Console, Courier New, monospace;
+}
+
+.container {
+  /* height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  display: block;
+}
