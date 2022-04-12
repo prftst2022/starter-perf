@@ -6,8 +6,6 @@ import Text from "@starter-perf/text-scss"
 import TrackCard from "@starter-perf/track-card-scss"
 import styles from "./Block.module.scss"
 
-console.log("styles", styles)
-
 const Block = ({ number }) => {
   return (
     <div className={styles["block-wrapper"]}>
