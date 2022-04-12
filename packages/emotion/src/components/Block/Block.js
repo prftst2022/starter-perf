@@ -1,9 +1,9 @@
 import React from "react"
-import Avatar from "../Avatar"
-import Space from "../Space"
-import Button from "../Button"
-import Text from "../Text"
-import TrackCard from "../TrackCard"
+import Avatar from "@starter-perf/avatar-emotion"
+import Space from "@starter-perf/space-emotion"
+import Button from "@starter-perf/button-emotion"
+import Text from "@starter-perf/text-emotion"
+import TrackCard from "@starter-perf/track-card-emotion"
 import * as styles from "./Block.styles"
 
 const Block = ({ number }) => {
