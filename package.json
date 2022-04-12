@@ -9,8 +9,8 @@
   "description": "starter for test performance",
   "version": "0.0.0",
   "scripts": {
-    "emotion": "yarn workspace @starter-perf/emotion develop",
-    "cssstyles": "yarn workspace @starter-perf/cssstyles develop",
+    "gatsby-emotion": "yarn workspace @starter-perf/gatsby-emotion develop",
+    "gatsby-scss": "yarn workspace @starter-perf/gatsby-scss develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
   },
   "dependencies": {
