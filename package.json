@@ -2,7 +2,6 @@
   "name": "starter-perf",
   "private": true,
   "workspaces": [
-    "components/scss-components/Avatar",
     "packages/*"
   ],
   "description": "starter for test performance",
