@@ -23,7 +23,9 @@ const EXTERNAL_DEPS = [
 const plugins = [
   peerDepsExternal(),
   json(),
-  nodeResolve({ preferBuiltins: true }),
+  nodeResolve({
+    preferBuiltins: true,
+  }),
   babel({
     exclude: "node_modules/**",
     babelHelpers: "bundled",
@@ -39,7 +41,9 @@ const plugins = [
         fallback: "copy",
       }),
     ],
-    sourceMap: true,
+    sourceMap: false,
+    inject: false,
+    extract: true,
   }),
 ]
 

@@ -31,7 +31,8 @@
     "@starter-perf/button-emotion": "0.1.0",
     "@starter-perf/space-emotion": "0.1.0",
     "@starter-perf/text-emotion": "0.1.0",
-    "@starter-perf/track-card-emotion": "0.1.0"
+    "@starter-perf/track-card-emotion": "0.1.0",
+    "@starter-perf/button-example": "0.1.0"
   },
   "repository": {
     "type": "git",

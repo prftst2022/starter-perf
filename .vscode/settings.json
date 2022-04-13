@@ -1,5 +1,6 @@
 {
   "explorer.experimental.fileNesting.enabled": true,
+  "explorer.experimental.fileNesting.expand": false,
   "explorer.experimental.fileNesting.patterns": {
     "package.json": "yarn.lock, .gitignore, .prettierignore, .prettierrc, README.md"
   } 

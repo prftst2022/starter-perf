@@ -4,7 +4,7 @@
   "license": "MIT",
   "main": "src/index.js",
  "scripts": {
-    "build": "rollup --config node:@starter-perf/rollup-config",
+    "build": "rollup --config node:@starter-perf/rollup-config-emotion",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
@@ -15,7 +15,7 @@
     "@starter-perf/tokens-scss": "0.1.0"
   },
   "devDependencies": {
-    "@starter-perf/rollup-config": "*",
+    "@starter-perf/rollup-config-emotion": "*",
     "rollup": "^2.67.0",
     "prettier": "^2.6.2"
   }

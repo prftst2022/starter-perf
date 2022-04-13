@@ -1,0 +1,43 @@
+:root {
+  --scss-colors-primary: #005b99;
+  --scss-colors-text: #2e353f;
+  --scss-colors-textlight: #4f5969;
+  --scss-colors-heading: #1a202c;
+  --scss-colors-headingblack: black;
+  --scss-colors-accent: #d1dce5;
+  --scss-colors-bgcolor: #e0e0e0;
+  --scss-colors-avatar: #293c2c;
+
+  --scss-spacing-s: 8px;
+  --scss-spacing-m: 16px;
+  --scss-spacing-l: 24px;
+  --scss-spacing-xl: 32px;
+
+  --scss-border-radius-xs: 4px;
+  --scss-border-radius-s: 8px;
+  --scss-border-radius-m: 12px;
+}
+
+.avatar {
+  background-color: var(--scss-colors-avatar);
+  border-radius: 100%;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.unused-class {
+  background-color: var(--scss-colors-avatar);
+  border-radius: 100%;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: var(--scss-spacing-l);
+  border: 1px solid var(--scss-colors-heading);
+  padding: var(--scss-spacing-s);
+  margin-bottom: var(--scss-spacing-m);
+}
