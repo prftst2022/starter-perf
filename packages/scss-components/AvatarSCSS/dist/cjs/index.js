@@ -6,9 +6,10 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
-var Avatar = function Avatar(_ref) {
-  var _ref$number = _ref.number,
-      number = _ref$number === void 0 ? 1 : _ref$number;
+const Avatar = _ref => {
+  let {
+    number = 1
+  } = _ref;
   return /*#__PURE__*/React__default["default"].createElement("div", {
     className: "avatar"
   }, number + Math.floor(Math.random() * 100));

@@ -1,0 +1,23 @@
+:root {
+  --scss-colors-primary: #005b99;
+  --scss-colors-text: #2e353f;
+  --scss-colors-textlight: #4f5969;
+  --scss-colors-heading: #1a202c;
+  --scss-colors-headingblack: black;
+  --scss-colors-accent: #d1dce5;
+  --scss-colors-bgcolor: #e0e0e0;
+  --scss-colors-avatar: #293c2c;
+
+  --scss-spacing-s: 8px;
+  --scss-spacing-m: 16px;
+  --scss-spacing-l: 24px;
+  --scss-spacing-xl: 32px;
+
+  --scss-border-radius-xs: 4px;
+  --scss-border-radius-s: 8px;
+  --scss-border-radius-m: 12px;
+}
+
+.space {
+  width: var(--scss-spacing-m);
+}
