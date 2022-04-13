@@ -50,8 +50,16 @@ const plugins = [
 const config = {
   input: INPUT_FILE,
   output: [
-    { file: PKG_JSON.main, format: "cjs" },
-    { file: PKG_JSON.module, format: "esm" },
+    {
+      file: PKG_JSON.main,
+      format: "cjs",
+      intro: 'import "./index.css"',
+    },
+    {
+      file: PKG_JSON.module,
+      format: "esm",
+      intro: 'import "./index.css"',
+    },
   ],
   plugins,
   external: EXTERNAL_DEPS,
