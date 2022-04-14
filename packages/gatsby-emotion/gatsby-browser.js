@@ -3,7 +3,7 @@ import { ThemeProvider } from "@emotion/react"
 
 const theme = {
   colors: {
-    primary: "#005b99",
+    primary: "#0f84d4",
     text: "#2e353f",
     textLight: "#4f5969",
     heading: "#1a202c",

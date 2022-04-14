@@ -20,14 +20,7 @@ export default function Home() {
     <div css={wrapper}>
       <h1>Hello world! emotion</h1>
       <SomeHeader />
-      <Button
-        // color={text('color', '')}
-        size={"small"}
-        enableElevation={false}
-        variant="solid"
-      >
-        Solid Button
-      </Button>
+      <Button>Example Button</Button>
       {arr.map((_, index) => (
         <Block key={index} number={index} />
       ))}

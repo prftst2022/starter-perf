@@ -2293,201 +2293,73 @@ var createStyled = function createStyled(tag, options) {
   };
 };
 
-const spacing = {
-  none: 0,
-  xxsmall: "4px",
-  xsmall: "8px",
-  small: "12px",
-  medium: "20px",
-  gutter: "24px",
-  large: "32px",
-  xlarge: "48px",
-  xxlarge: "96px"
-};
-const fontSizes = {
-  xsmall: "0.79rem",
-  small: "0.889rem",
-  medium: "1rem",
-  large: "1.125rem",
-  xlarge: "1.266rem",
-  xxlarge: "1.424rem"
-};
-
 const isObjectEmpty = obj => {
   return Object.keys(obj).length === 0;
 };
 
-const white = '#fff';
-const black = '#111';
-const palette = {
-  common: {
-    black,
-    white
-  },
-  primary: {
-    main: '#0070F3',
-    light: '#146DD6',
-    contrastText: white
-  },
-  error: {
-    main: '#A51C30',
-    light: '#A7333F',
-    contrastText: white
-  },
-  grey: {
-    100: '#EAEAEA',
-    200: '#C9C5C5',
-    300: '#888',
-    400: '#666'
-  }
-};
-const shadows = {
-  0: 'none',
-  1: '0px 5px 10px rgba(0, 0, 0, 0.12)',
-  2: '0px 8px 30px rgba(0, 0, 0, 0.24)'
-};
-const typography = {
-  fontFamily: "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', sans-serif"
-};
-const shape = {
-  borderRadius: spacing['xxsmall']
-};
 const theme = {
-  palette,
-  shadows,
-  typography,
-  shape
-};
-
-const buttonSizeProps = {
-  small: {
-    fontSize: fontSizes["xsmall"],
-    padding: "".concat(spacing["xsmall"], " ").concat(spacing["small"])
+  colors: {
+    primary: "#005b99",
+    text: "#2e353f",
+    textLight: "#4f5969",
+    heading: "#1a202c",
+    headingBlack: "black",
+    accent: "#d1dce5",
+    bgColor: "#e0e0e0",
+    avatar: "#88BF91"
   },
-  medium: {
-    fontSize: fontSizes["small"],
-    padding: "".concat(spacing["small"], " ").concat(spacing["medium"])
+  spacing: {
+    s: "8px",
+    m: "16px",
+    l: "24px",
+    xl: "32px"
   },
-  large: {
-    fontSize: fontSizes["medium"],
-    padding: "".concat(spacing["medium"], " ").concat(spacing["large"])
+  borderRadius: {
+    xs: "4px",
+    s: "8px",
+    m: "12px"
   }
 };
 
-const getPropsByVariant = _ref => {
-  let {
-    variant,
-    color,
-    theme
-  } = _ref;
-  const colorInPalette = theme.palette[color];
-  const defaultOutlineVariantProps = {
-    main: {
-      border: "1px solid ".concat(theme.palette.common.black),
-      backgroundColor: theme.palette.common.white,
-      color: theme.palette.common.black
-    },
-    hover: {
-      border: "1px solid ".concat(theme.palette.common.black),
-      backgroundColor: theme.palette.common.white,
-      color: theme.palette.common.black
-    }
-  };
-  const outlineVariantPropsByPalette = colorInPalette && {
-    main: {
-      border: "1px solid ".concat(colorInPalette.main),
-      backgroundColor: theme.palette.common.white,
-      color: colorInPalette.main
-    },
-    hover: {
-      border: "1px solid ".concat(colorInPalette.light),
-      backgroundColor: theme.palette.common.white,
-      color: colorInPalette.light
-    }
-  };
-  const defaultSolidVariantProps = {
-    main: {
-      border: "1px solid ".concat(theme.palette.grey[100]),
-      backgroundColor: theme.palette.grey[100],
-      color: theme.palette.common.black
-    },
-    hover: {
-      border: "1px solid ".concat(theme.palette.grey[200]),
-      backgroundColor: theme.palette.grey[200]
-    }
-  };
-  const solidVariantPropsByPalette = colorInPalette && {
-    main: {
-      border: "1px solid ".concat(colorInPalette.main),
-      backgroundColor: colorInPalette.main,
-      color: colorInPalette.contrastText
-    },
-    hover: {
-      border: "1px solid ".concat(colorInPalette.light),
-      backgroundColor: colorInPalette.light
-    }
-  };
-  const variants = {
-    outline: colorInPalette ? outlineVariantPropsByPalette : defaultOutlineVariantProps,
-    solid: colorInPalette ? solidVariantPropsByPalette : defaultSolidVariantProps
-  };
-  return variants[variant] || variants.solid;
-};
-
-const StyledButton = _ref2 => {
-  var _buttonSizeProps$size, _buttonSizeProps$size2;
-
-  let {
-    color,
-    size,
-    variant,
-    enableElevation,
-    disabled,
+const StyledButton = props => {
+  console.log("props", props);
+  const {
     theme: theme$1
-  } = _ref2;
-
-  // TODO MERGE
-  if (isObjectEmpty(theme$1)) {
-    theme$1 = theme;
-  }
-
-  const fontSizeBySize = (_buttonSizeProps$size = buttonSizeProps[size]) === null || _buttonSizeProps$size === void 0 ? void 0 : _buttonSizeProps$size.fontSize;
-  const paddingBySize = (_buttonSizeProps$size2 = buttonSizeProps[size]) === null || _buttonSizeProps$size2 === void 0 ? void 0 : _buttonSizeProps$size2.padding;
-  const propsByVariant = getPropsByVariant({
-    variant,
-    theme: theme$1,
-    color
-  });
+  } = props;
+  const themeToUse = isObjectEmpty(theme$1) ? theme : theme$1;
   return {
-    fontWeight: 500,
+    backgroundColor: "".concat(themeToUse.colors.primary),
+    padding: "".concat(themeToUse.spacing.s),
+    fontSize: "16px",
+    borderRadius: "8px",
+    borderStyle: "none",
+    boxSizing: "border-box",
+    color: "#ffffff",
     cursor: "pointer",
-    opacity: disabled && 0.7,
-    transition: "all 0.3s linear",
-    padding: buttonSizeProps.medium.padding,
-    fontSize: buttonSizeProps.medium.fontSize,
-    borderRadius: theme$1.shape.borderRadius,
-    fontFamily: theme$1.typography.fontFamily,
-    boxShadow: enableElevation && theme$1.shadows[1],
-    ...(propsByVariant && propsByVariant.main),
-    ...(paddingBySize && {
-      padding: paddingBySize
-    }),
-    ...(fontSizeBySize && {
-      fontSize: fontSizeBySize
-    }),
-    "&:hover": !disabled && {
-      boxShadow: enableElevation && theme$1.shadows[2],
-      ...(propsByVariant && propsByVariant.hover)
+    display: "inline-block",
+    fontWeight: "500",
+    lineDeight: "20px",
+    outline: "none",
+    position: "relative",
+    textAlign: "center",
+    textDecoration: "none",
+    transitionColor: "100ms",
+    verticalAlign: "baseline",
+    margin: "15px",
+    "&:hover": {
+      backgroundColor: "".concat(themeToUse.colors.textLight)
+    },
+    "&:focus": {
+      backgroundColor: "".concat(themeToUse.colors.textLight)
     }
   };
 };
 
-const IGNORED_PROPS = ["color"];
 const buttonConfig = {
-  shouldForwardProp: prop => isPropValid(prop) && !IGNORED_PROPS.includes(prop)
+  shouldForwardProp: prop => isPropValid(prop)
 };
 var Button = /*#__PURE__*/createStyled("button", _extends$1({}, {
   target: "e1yulxsy0"
-}, buttonConfig))(StyledButton, process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkJ1dHRvbi5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFxSWUiLCJmaWxlIjoiQnV0dG9uLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHN0eWxlZCBmcm9tIFwiQGVtb3Rpb24vc3R5bGVkXCJcbmltcG9ydCBpc1Byb3BWYWxpZCBmcm9tIFwiQGVtb3Rpb24vaXMtcHJvcC12YWxpZFwiXG5pbXBvcnQge1xuICBpc09iamVjdEVtcHR5LFxuICBzcGFjaW5nLFxuICBmb250U2l6ZXMsXG4gIHRoZW1lIGFzIGRlZmF1bHRUaGVtZSxcbn0gZnJvbSBcIi4uLy4uL3V0aWxzXCJcblxuY29uc3QgYnV0dG9uU2l6ZVByb3BzID0ge1xuICBzbWFsbDoge1xuICAgIGZvbnRTaXplOiBmb250U2l6ZXNbXCJ4c21hbGxcIl0sXG4gICAgcGFkZGluZzogYCR7c3BhY2luZ1tcInhzbWFsbFwiXX0gJHtzcGFjaW5nW1wic21hbGxcIl19YCxcbiAgfSxcbiAgbWVkaXVtOiB7XG4gICAgZm9udFNpemU6IGZvbnRTaXplc1tcInNtYWxsXCJdLFxuICAgIHBhZGRpbmc6IGAke3NwYWNpbmdbXCJzbWFsbFwiXX0gJHtzcGFjaW5nW1wibWVkaXVtXCJdfWAsXG4gIH0sXG4gIGxhcmdlOiB7XG4gICAgZm9udFNpemU6IGZvbnRTaXplc1tcIm1lZGl1bVwiXSxcbiAgICBwYWRkaW5nOiBgJHtzcGFjaW5nW1wibWVkaXVtXCJdfSAke3NwYWNpbmdbXCJsYXJnZVwiXX1gLFxuICB9LFxufVxuXG5jb25zdCBnZXRQcm9wc0J5VmFyaWFudCA9ICh7IHZhcmlhbnQsIGNvbG9yLCB0aGVtZSB9KSA9PiB7XG4gIGNvbnN0IGNvbG9ySW5QYWxldHRlID0gdGhlbWUucGFsZXR0ZVtjb2xvcl1cblxuICBjb25zdCBkZWZhdWx0T3V0bGluZVZhcmlhbnRQcm9wcyA9IHtcbiAgICBtYWluOiB7XG4gICAgICBib3JkZXI6IGAxcHggc29saWQgJHt0aGVtZS5wYWxldHRlLmNvbW1vbi5ibGFja31gLFxuICAgICAgYmFja2dyb3VuZENvbG9yOiB0aGVtZS5wYWxldHRlLmNvbW1vbi53aGl0ZSxcbiAgICAgIGNvbG9yOiB0aGVtZS5wYWxldHRlLmNvbW1vbi5ibGFjayxcbiAgICB9LFxuICAgIGhvdmVyOiB7XG4gICAgICBib3JkZXI6IGAxcHggc29saWQgJHt0aGVtZS5wYWxldHRlLmNvbW1vbi5ibGFja31gLFxuICAgICAgYmFja2dyb3VuZENvbG9yOiB0aGVtZS5wYWxldHRlLmNvbW1vbi53aGl0ZSxcbiAgICAgIGNvbG9yOiB0aGVtZS5wYWxldHRlLmNvbW1vbi5ibGFjayxcbiAgICB9LFxuICB9XG5cbiAgY29uc3Qgb3V0bGluZVZhcmlhbnRQcm9wc0J5UGFsZXR0ZSA9IGNvbG9ySW5QYWxldHRlICYmIHtcbiAgICBtYWluOiB7XG4gICAgICBib3JkZXI6IGAxcHggc29saWQgJHtjb2xvckluUGFsZXR0ZS5tYWlufWAsXG4gICAgICBiYWNrZ3JvdW5kQ29sb3I6IHRoZW1lLnBhbGV0dGUuY29tbW9uLndoaXRlLFxuICAgICAgY29sb3I6IGNvbG9ySW5QYWxldHRlLm1haW4sXG4gICAgfSxcbiAgICBob3Zlcjoge1xuICAgICAgYm9yZGVyOiBgMXB4IHNvbGlkICR7Y29sb3JJblBhbGV0dGUubGlnaHR9YCxcbiAgICAgIGJhY2tncm91bmRDb2xvcjogdGhlbWUucGFsZXR0ZS5jb21tb24ud2hpdGUsXG4gICAgICBjb2xvcjogY29sb3JJblBhbGV0dGUubGlnaHQsXG4gICAgfSxcbiAgfVxuXG4gIGNvbnN0IGRlZmF1bHRTb2xpZFZhcmlhbnRQcm9wcyA9IHtcbiAgICBtYWluOiB7XG4gICAgICBib3JkZXI6IGAxcHggc29saWQgJHt0aGVtZS5wYWxldHRlLmdyZXlbMTAwXX1gLFxuICAgICAgYmFja2dyb3VuZENvbG9yOiB0aGVtZS5wYWxldHRlLmdyZXlbMTAwXSxcbiAgICAgIGNvbG9yOiB0aGVtZS5wYWxldHRlLmNvbW1vbi5ibGFjayxcbiAgICB9LFxuICAgIGhvdmVyOiB7XG4gICAgICBib3JkZXI6IGAxcHggc29saWQgJHt0aGVtZS5wYWxldHRlLmdyZXlbMjAwXX1gLFxuICAgICAgYmFja2dyb3VuZENvbG9yOiB0aGVtZS5wYWxldHRlLmdyZXlbMjAwXSxcbiAgICB9LFxuICB9XG5cbiAgY29uc3Qgc29saWRWYXJpYW50UHJvcHNCeVBhbGV0dGUgPSBjb2xvckluUGFsZXR0ZSAmJiB7XG4gICAgbWFpbjoge1xuICAgICAgYm9yZGVyOiBgMXB4IHNvbGlkICR7Y29sb3JJblBhbGV0dGUubWFpbn1gLFxuICAgICAgYmFja2dyb3VuZENvbG9yOiBjb2xvckluUGFsZXR0ZS5tYWluLFxuICAgICAgY29sb3I6IGNvbG9ySW5QYWxldHRlLmNvbnRyYXN0VGV4dCxcbiAgICB9LFxuICAgIGhvdmVyOiB7XG4gICAgICBib3JkZXI6IGAxcHggc29saWQgJHtjb2xvckluUGFsZXR0ZS5saWdodH1gLFxuICAgICAgYmFja2dyb3VuZENvbG9yOiBjb2xvckluUGFsZXR0ZS5saWdodCxcbiAgICB9LFxuICB9XG5cbiAgY29uc3QgdmFyaWFudHMgPSB7XG4gICAgb3V0bGluZTogY29sb3JJblBhbGV0dGVcbiAgICAgID8gb3V0bGluZVZhcmlhbnRQcm9wc0J5UGFsZXR0ZVxuICAgICAgOiBkZWZhdWx0T3V0bGluZVZhcmlhbnRQcm9wcyxcbiAgICBzb2xpZDogY29sb3JJblBhbGV0dGVcbiAgICAgID8gc29saWRWYXJpYW50UHJvcHNCeVBhbGV0dGVcbiAgICAgIDogZGVmYXVsdFNvbGlkVmFyaWFudFByb3BzLFxuICB9XG5cbiAgcmV0dXJuIHZhcmlhbnRzW3ZhcmlhbnRdIHx8IHZhcmlhbnRzLnNvbGlkXG59XG5cbmNvbnN0IFN0eWxlZEJ1dHRvbiA9ICh7XG4gIGNvbG9yLFxuICBzaXplLFxuICB2YXJpYW50LFxuICBlbmFibGVFbGV2YXRpb24sXG4gIGRpc2FibGVkLFxuICB0aGVtZSxcbn0pID0+IHtcbiAgLy8gVE9ETyBNRVJHRVxuICBpZiAoaXNPYmplY3RFbXB0eSh0aGVtZSkpIHtcbiAgICB0aGVtZSA9IGRlZmF1bHRUaGVtZVxuICB9XG5cbiAgY29uc3QgZm9udFNpemVCeVNpemUgPSBidXR0b25TaXplUHJvcHNbc2l6ZV0/LmZvbnRTaXplXG4gIGNvbnN0IHBhZGRpbmdCeVNpemUgPSBidXR0b25TaXplUHJvcHNbc2l6ZV0/LnBhZGRpbmdcblxuICBjb25zdCBwcm9wc0J5VmFyaWFudCA9IGdldFByb3BzQnlWYXJpYW50KHsgdmFyaWFudCwgdGhlbWUsIGNvbG9yIH0pXG5cbiAgcmV0dXJuIHtcbiAgICBmb250V2VpZ2h0OiA1MDAsXG4gICAgY3Vyc29yOiBcInBvaW50ZXJcIixcbiAgICBvcGFjaXR5OiBkaXNhYmxlZCAmJiAwLjcsXG4gICAgdHJhbnNpdGlvbjogXCJhbGwgMC4zcyBsaW5lYXJcIixcbiAgICBwYWRkaW5nOiBidXR0b25TaXplUHJvcHMubWVkaXVtLnBhZGRpbmcsXG4gICAgZm9udFNpemU6IGJ1dHRvblNpemVQcm9wcy5tZWRpdW0uZm9udFNpemUsXG4gICAgYm9yZGVyUmFkaXVzOiB0aGVtZS5zaGFwZS5ib3JkZXJSYWRpdXMsXG4gICAgZm9udEZhbWlseTogdGhlbWUudHlwb2dyYXBoeS5mb250RmFtaWx5LFxuICAgIGJveFNoYWRvdzogZW5hYmxlRWxldmF0aW9uICYmIHRoZW1lLnNoYWRvd3NbMV0sXG4gICAgLi4uKHByb3BzQnlWYXJpYW50ICYmIHByb3BzQnlWYXJpYW50Lm1haW4pLFxuICAgIC4uLihwYWRkaW5nQnlTaXplICYmIHsgcGFkZGluZzogcGFkZGluZ0J5U2l6ZSB9KSxcbiAgICAuLi4oZm9udFNpemVCeVNpemUgJiYgeyBmb250U2l6ZTogZm9udFNpemVCeVNpemUgfSksXG4gICAgXCImOmhvdmVyXCI6ICFkaXNhYmxlZCAmJiB7XG4gICAgICBib3hTaGFkb3c6IGVuYWJsZUVsZXZhdGlvbiAmJiB0aGVtZS5zaGFkb3dzWzJdLFxuICAgICAgLi4uKHByb3BzQnlWYXJpYW50ICYmIHByb3BzQnlWYXJpYW50LmhvdmVyKSxcbiAgICB9LFxuICB9XG59XG5cbmNvbnN0IElHTk9SRURfUFJPUFMgPSBbXCJjb2xvclwiXVxuXG5jb25zdCBidXR0b25Db25maWcgPSB7XG4gIHNob3VsZEZvcndhcmRQcm9wOiBwcm9wID0+IGlzUHJvcFZhbGlkKHByb3ApICYmICFJR05PUkVEX1BST1BTLmluY2x1ZGVzKHByb3ApLFxufVxuXG5leHBvcnQgZGVmYXVsdCBzdHlsZWQoXCJidXR0b25cIiwgYnV0dG9uQ29uZmlnKShTdHlsZWRCdXR0b24pXG4iXX0= */");
+}, buttonConfig))(StyledButton, process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkJ1dHRvbi5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUF5Q2UiLCJmaWxlIjoiQnV0dG9uLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHN0eWxlZCBmcm9tIFwiQGVtb3Rpb24vc3R5bGVkXCJcbmltcG9ydCBpc1Byb3BWYWxpZCBmcm9tIFwiQGVtb3Rpb24vaXMtcHJvcC12YWxpZFwiXG5pbXBvcnQgeyBpc09iamVjdEVtcHR5LCB0aGVtZSBhcyBkZWZhdWx0VGhlbWUgfSBmcm9tIFwiLi4vLi4vdXRpbHNcIlxuXG5jb25zdCBTdHlsZWRCdXR0b24gPSBwcm9wcyA9PiB7XG4gIGNvbnNvbGUubG9nKFwicHJvcHNcIiwgcHJvcHMpXG4gIGNvbnN0IHsgdGhlbWUgfSA9IHByb3BzXG4gIGNvbnN0IHRoZW1lVG9Vc2UgPSBpc09iamVjdEVtcHR5KHRoZW1lKSA/IGRlZmF1bHRUaGVtZSA6IHRoZW1lXG5cbiAgcmV0dXJuIHtcbiAgICBiYWNrZ3JvdW5kQ29sb3I6IGAke3RoZW1lVG9Vc2UuY29sb3JzLnByaW1hcnl9YCxcbiAgICBwYWRkaW5nOiBgJHt0aGVtZVRvVXNlLnNwYWNpbmcuc31gLFxuICAgIGZvbnRTaXplOiBcIjE2cHhcIixcbiAgICBib3JkZXJSYWRpdXM6IFwiOHB4XCIsXG4gICAgYm9yZGVyU3R5bGU6IFwibm9uZVwiLFxuICAgIGJveFNpemluZzogXCJib3JkZXItYm94XCIsXG4gICAgY29sb3I6IFwiI2ZmZmZmZlwiLFxuICAgIGN1cnNvcjogXCJwb2ludGVyXCIsXG4gICAgZGlzcGxheTogXCJpbmxpbmUtYmxvY2tcIixcbiAgICBmb250V2VpZ2h0OiBcIjUwMFwiLFxuICAgIGxpbmVEZWlnaHQ6IFwiMjBweFwiLFxuICAgIG91dGxpbmU6IFwibm9uZVwiLFxuICAgIHBvc2l0aW9uOiBcInJlbGF0aXZlXCIsXG4gICAgdGV4dEFsaWduOiBcImNlbnRlclwiLFxuICAgIHRleHREZWNvcmF0aW9uOiBcIm5vbmVcIixcbiAgICB0cmFuc2l0aW9uQ29sb3I6IFwiMTAwbXNcIixcbiAgICB2ZXJ0aWNhbEFsaWduOiBcImJhc2VsaW5lXCIsXG4gICAgbWFyZ2luOiBcIjE1cHhcIixcbiAgICBcIiY6aG92ZXJcIjoge1xuICAgICAgYmFja2dyb3VuZENvbG9yOiBgJHt0aGVtZVRvVXNlLmNvbG9ycy50ZXh0TGlnaHR9YCxcbiAgICB9LFxuICAgIFwiJjpmb2N1c1wiOiB7XG4gICAgICBiYWNrZ3JvdW5kQ29sb3I6IGAke3RoZW1lVG9Vc2UuY29sb3JzLnRleHRMaWdodH1gLFxuICAgIH0sXG4gIH1cbn1cblxuY29uc3QgYnV0dG9uQ29uZmlnID0ge1xuICBzaG91bGRGb3J3YXJkUHJvcDogcHJvcCA9PiBpc1Byb3BWYWxpZChwcm9wKSxcbn1cblxuZXhwb3J0IGRlZmF1bHQgc3R5bGVkKFwiYnV0dG9uXCIsIGJ1dHRvbkNvbmZpZykoU3R5bGVkQnV0dG9uKVxuIl19 */");
 
 export { Button as default };
