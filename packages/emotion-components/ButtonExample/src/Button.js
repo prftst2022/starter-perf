@@ -1,42 +1,41 @@
-import styled from "@emotion/styled"
-import isPropValid from "@emotion/is-prop-valid"
+/** @jsx jsx */
+import { jsx, css } from "@emotion/react"
 import { isObjectEmpty, theme as defaultTheme } from "../../utils"
+
+export const button = theme => css`
+  background-color: ${(isObjectEmpty(theme) ? defaultTheme : theme).colors
+    .primary};
+  padding: ${(isObjectEmpty(theme) ? defaultTheme : theme).spacing.s};
+  font-size: 16px;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 20px;
+  outline: none;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  margin: 15px;
+  &:hover,
+  &:focus {
+    background-color: ${(isObjectEmpty(theme) ? defaultTheme : theme).colors
+      .textLight};
+  }
+`
 
 const StyledButton = props => {
   console.log("props", props)
-  const { theme } = props
-  const themeToUse = isObjectEmpty(theme) ? defaultTheme : theme
-
-  return {
-    backgroundColor: `${themeToUse.colors.primary}`,
-    padding: `${themeToUse.spacing.s}`,
-    fontSize: "16px",
-    borderRadius: "8px",
-    borderStyle: "none",
-    boxSizing: "border-box",
-    color: "#ffffff",
-    cursor: "pointer",
-    display: "inline-block",
-    fontWeight: "500",
-    lineDeight: "20px",
-    outline: "none",
-    position: "relative",
-    textAlign: "center",
-    textDecoration: "none",
-    transitionColor: "100ms",
-    verticalAlign: "baseline",
-    margin: "15px",
-    "&:hover": {
-      backgroundColor: `${themeToUse.colors.textLight}`,
-    },
-    "&:focus": {
-      backgroundColor: `${themeToUse.colors.textLight}`,
-    },
-  }
+  return (
+    <button type="button" aria-label={`click on button `} css={button}>
+      Click me
+    </button>
+  )
 }
 
-const buttonConfig = {
-  shouldForwardProp: prop => isPropValid(prop),
-}
-
-export default styled("button", buttonConfig)(StyledButton)
+export default StyledButton

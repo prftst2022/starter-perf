@@ -13,10 +13,10 @@ const PACKAGE_ROOT_PATH = process.cwd()
 const INPUT_FILE = path.join(PACKAGE_ROOT_PATH, "src/index.js")
 const PKG_JSON = require(path.join(PACKAGE_ROOT_PATH, "package.json"))
 
-const EXTERNAL_DEPS = [
-  ...Object.keys(PKG_JSON.peerDependencies || {}),
-  ...Object.keys(PKG_JSON.dependencies || {}),
-]
+// const EXTERNAL_DEPS = [
+//   ...Object.keys(PKG_JSON.peerDependencies || {}),
+//   ...Object.keys(PKG_JSON.dependencies || {}),
+// ]
 
 const plugins = [
   peerDepsExternal(),
@@ -27,7 +27,7 @@ const plugins = [
   babel({
     exclude: "node_modules/**",
     babelHelpers: "bundled",
-    presets: ["@babel/preset-env", "@babel/preset-react", "@emotion/babel-preset-css-prop"],
+    presets: ["@babel/preset-env", "@babel/preset-react"],
     plugins: ["@emotion/babel-plugin"],
   }),
   commonjs(),
@@ -40,7 +40,6 @@ const config = {
     { file: PKG_JSON.module, format: "esm" },
   ],
   plugins,
-  external: EXTERNAL_DEPS,
 }
 
 export default [config]
