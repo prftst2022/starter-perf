@@ -1,0 +1,25 @@
+{
+  "name": "@starter-perf/next-emotion",
+  "version": "0.5.0",
+  "private": true,
+  "scripts": {
+    "develop": "next dev",
+    "build": "next build",
+    "export": "next export"
+  },
+  "dependencies": {
+    "next": "^12.0.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@netlify/plugin-nextjs": "^4.2.5",
+    "sass": "^1.50.0",
+    "@starter-perf/avatar-emotion": "0.1.0",
+    "@starter-perf/button-emotion": "0.1.0",
+    "@starter-perf/space-emotion": "0.1.0",
+    "@starter-perf/text-emotion": "0.1.0",
+    "@starter-perf/track-card-emotion": "0.1.0",
+    "@starter-perf/button-example": "0.1.0"
+  }
+}
