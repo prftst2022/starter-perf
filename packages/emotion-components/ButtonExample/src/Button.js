@@ -29,10 +29,13 @@ export const button = theme => css`
   }
 `
 
-const StyledButton = props => {
-  console.log("props", props)
+const StyledButton = () => {
   return (
-    <button type="button" aria-label={`click on button `} css={button}>
+    <button
+      type="button"
+      aria-label={`click on button `}
+      css={props => btn(props)}
+    >
       Click me
     </button>
   )

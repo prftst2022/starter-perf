@@ -1,5 +1,6 @@
 import { css } from "@emotion/react"
+import { isObjectEmpty, theme as defaultTheme } from "../../utils"
 
 export const space = theme => css`
-  width: ${theme.spacing.m};
+  width: ${(isObjectEmpty(theme) ? defaultTheme : theme).spacing.m};
 `

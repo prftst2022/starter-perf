@@ -1,4 +1,5 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx } from "@emotion/react"
 import * as styles from "./Text.styles"
 
 const Text = ({ number }) => {

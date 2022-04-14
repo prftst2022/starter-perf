@@ -2,21 +2,30 @@
   "name": "@starter-perf/text-emotion",
   "version": "0.1.0",
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
  "scripts": {
     "build": "rollup --config node:@starter-perf/rollup-config-emotion",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
-  "dependencies": {
-    "react": "^17.0.1",
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.8.1",
-    "@starter-perf/tokens-scss": "0.1.0"
-  },
   "devDependencies": {
+    "react": "^17.0.1",
     "@starter-perf/rollup-config-emotion": "*",
     "rollup": "^2.67.0",
-    "prettier": "^2.6.2"
-  }
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1"
+  },
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "@emotion/react": "^11.9.0"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "maintained node versions"
+  ]
 }

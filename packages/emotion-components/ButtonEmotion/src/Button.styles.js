@@ -1,8 +1,9 @@
 import { css } from "@emotion/react"
+import { isObjectEmpty, theme as defaultTheme } from "../../utils"
 
 export const button = theme => css`
-  background-color: ${theme.colors.primary};
-  padding: ${theme.spacing.s};
+  background-color: ${(isObjectEmpty(theme) ? defaultTheme : theme).colors.primary};
+  padding: ${(isObjectEmpty(theme) ? defaultTheme : theme).spacing.s};
   font-size: 16px;
   border-radius: 8px;
   border-style: none;
@@ -20,6 +21,6 @@ export const button = theme => css`
   vertical-align: baseline;
   &:hover,
   &:focus {
-    background-color: ${theme.colors.textLight};
+    background-color: ${(isObjectEmpty(theme) ? defaultTheme : theme).colors.textLight};
   }
 `

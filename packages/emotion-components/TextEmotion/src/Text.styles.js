@@ -1,5 +1,6 @@
 import { css } from "@emotion/react"
+import { isObjectEmpty, theme as defaultTheme } from "../../utils"
 
 export const text = theme => css`
-  color: ${theme.colors.text};
+  color: ${(isObjectEmpty(theme) ? defaultTheme : theme).colors.text};
 `

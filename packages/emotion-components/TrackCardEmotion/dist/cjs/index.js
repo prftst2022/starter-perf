@@ -1,6 +1,8 @@
-/** @jsx jsx */
-import { jsx } from "@emotion/react"
+'use strict';
 
+var react = require('@emotion/react');
+
+/** @jsx jsx */
 const CardContainer = {
   borderRadius: 6,
   color: "black",
@@ -17,27 +19,24 @@ const CardContainer = {
   overflow: "hidden",
   position: "relative",
   ":hover": {
-    backgroundColor: "#e0e0e0",
+    backgroundColor: "#e0e0e0"
   },
-  cursor: "pointer",
-}
-
+  cursor: "pointer"
+};
 const CardContent = {
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-around",
-  height: "100%",
-}
-
+  height: "100%"
+};
 const CardTitle = {
   textAlign: "center",
   fontSize: "1.4em",
   lineHeight: "1em",
   fontWeight: 700,
   color: "black",
-  flex: 1,
-}
-
+  flex: 1
+};
 const CardImageContainer = {
   height: 220,
   position: "relative",
@@ -48,77 +47,74 @@ const CardImageContainer = {
     bottom: 0,
     left: 0,
     right: 0,
-    background: "rgba(250,0,150,0.20)",
-  },
-}
-
+    background: "rgba(250,0,150,0.20)"
+  }
+};
 const CardImage = {
   backgroundColor: "#e0e0e0",
   width: "64px",
   height: "64px",
-  filter: "grayscale(60%)",
-}
-
+  filter: "grayscale(60%)"
+};
 const CardBody = {
   padding: 18,
   flex: 1,
   display: "flex",
   color: "#e0e0e0",
   flexDirection: "column",
-  justifyContent: "space-around",
-}
-
+  justifyContent: "space-around"
+};
 const CardFooter = {
   display: "flex",
-  flexDirection: "Row",
-}
-
+  flexDirection: "Row"
+};
 const AuthorImage = {
   height: 30,
   width: 30,
   marginRight: 8,
   borderRadius: "50%",
   objectFit: "cover",
-  backgroundColor: "#573535",
-}
-
+  backgroundColor: "#573535"
+};
 const AuthorAndTrack = {
   display: "flex",
   flexDirection: "column",
-  justifyContent: "space-between",
-}
-
+  justifyContent: "space-between"
+};
 const AuthorName = {
   lineHeight: "1em",
   fontSize: "1.1em",
-  color: "black",
-}
-
+  color: "black"
+};
 const TrackLength = {
   fontSize: "0.8em",
-  color: "black",
-}
+  color: "black"
+};
 
 const TrackCard = () => {
-  return (
-    <div css={CardContainer}>
-      <div css={CardContent}>
-        <div css={CardImageContainer}>
-          <div css={CardImage} />
-        </div>
-        <div css={CardBody}>
-          <h3 css={CardTitle}>Lorem</h3>
-          <div css={CardFooter}>
-            <div css={AuthorImage} />
-            <div css={AuthorAndTrack}>
-              <span css={AuthorName}>Lorem</span>
-              <span css={TrackLength}>Lorem</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
+  return react.jsx("div", {
+    css: CardContainer
+  }, react.jsx("div", {
+    css: CardContent
+  }, react.jsx("div", {
+    css: CardImageContainer
+  }, react.jsx("div", {
+    css: CardImage
+  })), react.jsx("div", {
+    css: CardBody
+  }, react.jsx("h3", {
+    css: CardTitle
+  }, "Lorem"), react.jsx("div", {
+    css: CardFooter
+  }, react.jsx("div", {
+    css: AuthorImage
+  }), react.jsx("div", {
+    css: AuthorAndTrack
+  }, react.jsx("span", {
+    css: AuthorName
+  }, "Lorem"), react.jsx("span", {
+    css: TrackLength
+  }, "Lorem"))))));
+};
 
-export default TrackCard
+module.exports = TrackCard;
