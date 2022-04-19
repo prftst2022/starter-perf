@@ -14,6 +14,7 @@
     "next-emotion": "yarn workspace @starter-perf/next-emotion develop",
     "next-scss": "yarn workspace @starter-perf/next-scss develop",
     "react-emotion": "yarn workspace @starter-perf/react-emotion develop",
+    "react-scss": "yarn workspace @starter-perf/react-scss develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "clean:all": "workspaces-foreach rimraf node_modules .next .cache && rimraf node_modules"
   },
