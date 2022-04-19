@@ -1,0 +1,26 @@
+{
+  "name": "@starter-perf/react-emotion",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "develop": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^1.3.0",
+    "vite": "^2.9.2",
+    "@starter-perf/avatar-emotion": "0.1.0",
+    "@starter-perf/button-emotion": "0.1.0",
+    "@starter-perf/space-emotion": "0.1.0",
+    "@starter-perf/text-emotion": "0.1.0",
+    "@starter-perf/track-card-emotion": "0.1.0",
+    "@starter-perf/button-example": "0.1.0"
+  }
+}
